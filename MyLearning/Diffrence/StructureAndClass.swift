@@ -22,6 +22,12 @@ struct StructureAndClass: View {
                 student4.name = "Anish Gupta"
                 print("student3 name: \(student3.name)")
                 print("student4 name: \(student4.name)")
+                
+                var a: Int?
+                a = 7
+                guard var c = a else { return }
+                c = 5
+                print(c)
             }
     }
 }
@@ -33,14 +39,31 @@ struct StructureAndClass: View {
 
 class StudentClass {
    var name: String
-   var grade: Int
-   init(name: String, grade: Int) {
-      self.name = name
-      self.grade = grade
-   }
+   var grade: Int = 70 // Default value
+    
+    // Initializer || Constructor || // Designated initializer
+    init(name: String, grade: Int) {
+        self.name = name
+        self.grade = grade
+    }
+    
+    // Convenience initializer
+    convenience init(name: String) {
+        self.init(name: name, grade: 2020) // Default grade
+    }
+    
+    // Deinitializer || Destructor
+    deinit {
+        print("closed.")
+    }
 }
 
 struct StudentStruct {
    var name: String
-   var grade: Int
+   var grade: Int = 70
 }
+
+//1. Constructor: Designated initializer
+//2. Destructor:
+//3. Convenience initializer:
+
